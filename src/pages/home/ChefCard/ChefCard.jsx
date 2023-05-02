@@ -1,13 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import Chefs from "../Chefs/Chefs";
 
-const Home = () => {
+const ChefCard = () => {
    return (
       <div>
-         <Chefs></Chefs>
+         <h2>This is chef card</h2>
       </div>
    );
 };
 
-export default Home;
+export default ChefCard;

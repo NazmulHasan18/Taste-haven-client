@@ -1,15 +1,26 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Button, Container, Form, Nav, Navbar } from "react-bootstrap";
+import { FaSearch } from "react-icons/fa";
 
 const NavigationBar = () => {
    return (
-      <Navbar bg="dark" variant="dark" sticky="top">
-         <Container className="gap-4">
+      <Navbar bg="transparent" variant="dark" fixed="top">
+         <Container className="gap-4 mt-3">
             <Navbar.Brand href="#home">Taste Haven</Navbar.Brand>
-            <Form className="d-flex">
-               <Form.Control type="search" placeholder="Search" className="me-2" aria-label="Search" />
-               <Button variant="outline-success">Search</Button>
+            <Form className="d-flex position-relative flex-grow-1">
+               <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  className="me-2 bg-white bg-opacity-25 search-input text-white"
+                  aria-label="Search"
+               />
+               <Button
+                  variant="success"
+                  className="rounded-0 rounded-end position-absolute end-0 me-2  bg-success bg-opacity-25"
+               >
+                  <FaSearch></FaSearch>
+               </Button>
             </Form>
             <Nav className="flex-grow-1 justify-content-center gap-4">
                <Nav.Link href="#home">Home</Nav.Link>
