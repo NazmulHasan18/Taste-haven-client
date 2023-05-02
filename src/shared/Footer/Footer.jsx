@@ -17,22 +17,22 @@ const Footer = () => {
             <Col sm={6} md={2} className="">
                <h5 className="mb-3">Explore</h5>
                <div>
-                  <Link href="#" className="text-decoration-none text-white footer-link">
+                  <Link to="#" className="text-decoration-none text-white footer-link">
                      Home
                   </Link>
                </div>
                <div className="my-3">
-                  <Link href="#" className="text-decoration-none text-white footer-link">
+                  <Link to="#" className="text-decoration-none text-white footer-link">
                      Blogs
                   </Link>
                </div>
                <div className="my-3">
-                  <Link href="#" className="text-decoration-none text-white footer-link">
+                  <Link to="#" className="text-decoration-none text-white footer-link">
                      Chefs
                   </Link>
                </div>
                <div className="my-3">
-                  <Link href="#" className="text-decoration-none text-white footer-link">
+                  <Link to="#" className="text-decoration-none text-white footer-link">
                      Reviews
                   </Link>
                </div>
@@ -42,22 +42,22 @@ const Footer = () => {
                <div>
                   <h5>Follow</h5>
                   <div className="my-3">
-                     <Link href="#" className="text-decoration-none text-white footer-link">
+                     <Link to="#" className="text-decoration-none text-white footer-link">
                         Facebook
                      </Link>
                   </div>
                   <div className="my-3">
-                     <Link href="#" className="text-decoration-none text-white footer-link">
+                     <Link to="#" className="text-decoration-none text-white footer-link">
                         Twitter
                      </Link>
                   </div>
                   <div className="my-3">
-                     <Link href="#" className="text-decoration-none text-white footer-link">
+                     <Link to="#" className="text-decoration-none text-white footer-link">
                         Instagram
                      </Link>
                   </div>
                   <div className="my-3">
-                     <Link href="#" className="text-decoration-none text-white footer-link">
+                     <Link to="#" className="text-decoration-none text-white footer-link">
                         Linked In
                      </Link>
                   </div>
@@ -66,12 +66,12 @@ const Footer = () => {
             <Col sm={6} md={2}>
                <h5 className="mb-3">Explore</h5>
                <div>
-                  <Link href="#" className="text-decoration-none text-white footer-link">
+                  <Link to="#" className="text-decoration-none text-white footer-link">
                      Terms And Conditions
                   </Link>
                </div>
                <div className="my-3">
-                  <Link href="#" className="text-decoration-none text-white footer-link">
+                  <Link to="#" className="text-decoration-none text-white footer-link">
                      Privacy
                   </Link>
                </div>

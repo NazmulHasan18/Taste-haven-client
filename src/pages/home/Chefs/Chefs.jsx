@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,16 +12,13 @@ import { Navigation, Pagination } from "swiper";
 
 import ChefCard from "../ChefCard/ChefCard";
 
-const Chefs = () => {
-   const [chefs, setChefs] = useState([]);
-   useEffect(() => {
-      fetch("http://localhost:3000/chefs")
-         .then((res) => res.json())
-         .then((data) => setChefs(data));
-   }, []);
+const Chefs = ({ chefs }) => {
    return (
-      <div className="my-5">
-         <h2 className="text-center py-5">The Hand You Like To EAT (Chefs)</h2>
+      <div className="my-5" id="chefs">
+         <h2 className="text-center pt-5">The Hand You Like To EAT (Chefs)</h2>
+         <p className="text-center pb-5">
+            Chefs are the heart of a restaurants. Our chefs are our pride. You will miss their recipes.
+         </p>
          <Swiper
             slidesPerView={3}
             navigation={true}

@@ -6,12 +6,16 @@ import { FaHeart } from "react-icons/fa";
 import { BiBowlHot } from "react-icons/bi";
 
 const ChefCard = ({ chef }) => {
-   const { name, image, experience, foodItems, likes, chefPosition } = chef;
+   const { id, name, image, experience, foodItems, likes, chefPosition } = chef;
    console.log(chef);
    return (
-      <Card className="mb-5 border-danger " style={{ width: "18rem", height: "32rem" }} bg="warning">
+      <Card
+         className="mb-5 border-danger "
+         style={{ width: "18rem", height: "32rem" }}
+         bg={`${id % 2 ? "warning" : "danger"}`}
+      >
          <Card.Img variant="top" src={image} style={{ height: "19rem" }} />
-         <Card.Body>
+         <Card.Body className={`${id % 2 ? "text-black" : "text-white"}`}>
             <Card.Title>
                <h3>{name}</h3>
             </Card.Title>
@@ -27,12 +31,12 @@ const ChefCard = ({ chef }) => {
                </Card.Text>
                <Card.Text className="mb-1">
                   <span className="fw-semibold">
-                     <FaHeart className="text-danger"></FaHeart>
+                     <FaHeart className={`${id % 2 ? "text-danger" : "text-warning"}`}></FaHeart>
                   </span>{" "}
                   {likes}
                </Card.Text>
             </div>
-            <Button variant="danger" className="mt-3">
+            <Button variant={`${id % 2 ? "danger" : "warning"}`} className="mt-3">
                View Recipes <BiBowlHot></BiBowlHot>
             </Button>
          </Card.Body>
