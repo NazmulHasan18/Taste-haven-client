@@ -6,7 +6,6 @@ import { Button, Card } from "react-bootstrap";
 import { BiBowlHot } from "react-icons/bi";
 
 const FoodCard = ({ food }) => {
-   console.log(food);
    const { image, name, description, category, price, rating, id } = food;
    return (
       <Card

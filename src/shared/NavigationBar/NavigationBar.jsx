@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
    return (
-      <Navbar bg="danger" variant="dark" className="py-3">
+      <Navbar bg="danger" variant="dark" fixed="top" className="py-3">
          <Container className="gap-4 mt-3 pb-3">
             <Navbar.Brand href="#home">Taste Haven</Navbar.Brand>
             <Form className="d-flex position-relative flex-grow-1">

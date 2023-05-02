@@ -7,7 +7,7 @@ import { BiBowlHot } from "react-icons/bi";
 
 const ChefCard = ({ chef }) => {
    const { id, name, image, experience, foodItems, likes, chefPosition } = chef;
-   console.log(chef);
+
    return (
       <Card
          className="mb-5 border-danger "

@@ -3,6 +3,7 @@ import React from "react";
 import Chefs from "../Chefs/Chefs";
 import { useLoaderData } from "react-router-dom";
 import Foods from "../Foods/Foods";
+import Reviews from "../Reviews/Reviews";
 
 const Home = () => {
    const chefs = useLoaderData();
@@ -10,6 +11,7 @@ const Home = () => {
       <div>
          <Foods></Foods>
          <Chefs chefs={chefs}></Chefs>
+         <Reviews></Reviews>
       </div>
    );
 };
