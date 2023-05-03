@@ -37,7 +37,7 @@ const NavigationBar = () => {
                <NavLink to="/chefs" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
                   Chefs
                </NavLink>
-               <NavLink to="#reviews" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
+               <NavLink to="/reviews" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
                   Reviews
                </NavLink>
             </Nav>
