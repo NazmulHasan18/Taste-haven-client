@@ -21,6 +21,25 @@ h6 {
 .nav-link {
    color: white;
 }
-.nav-link:hover {
-   border-bottom: 1px solid white;
+.activeA {
+   background-color: aliceblue;
+   text-decoration: none;
+   padding: 8px 20px;
+   font-weight: 500;
+   color: black;
+   border-radius: 8px;
+}
+.inactiveA {
+   text-decoration: none;
+   color: white;
+   font-weight: 600;
+}
+.activeA:hover {
+   color: black;
+   opacity: 0.95;
+}
+
+.inactiveA:hover {
+   color: white;
+   opacity: 0.75;
 }

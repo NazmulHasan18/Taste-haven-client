@@ -2,13 +2,14 @@
 import React from "react";
 import { Button, Container, Form, Nav, Navbar } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavigationBar = () => {
    return (
       <Navbar bg="danger" variant="dark" sticky="top" className="py-3">
-         <Container className="gap-4 mt-3 pb-3">
-            <Navbar.Brand href="#home">Taste Haven</Navbar.Brand>
+         <Container className="gap-4 mt-3 pb-3 align-items-center">
+            <h2 className="text-white fs-2">Taste Haven</h2>
+
             <Form className="d-flex position-relative flex-grow-1">
                <Form.Control
                   type="search"
@@ -23,18 +24,30 @@ const NavigationBar = () => {
                   <FaSearch></FaSearch>
                </Button>
             </Form>
-            <Nav className="flex-grow-1 justify-content-center gap-4">
-               <Nav.Link href="#home">Home</Nav.Link>
-               <Nav.Link href="#blogs">Blogs</Nav.Link>
-               <Nav.Link href="#foods">Foods</Nav.Link>
-               <Nav.Link href="#chefs">Chefs</Nav.Link>
-               <Nav.Link href="#reviews">Reviews</Nav.Link>
+            <Nav className="flex-grow-1 justify-content-center align-items-center gap-4">
+               <NavLink to="/" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
+                  Home
+               </NavLink>
+               <NavLink to="/blogs" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
+                  Blogs
+               </NavLink>
+               <NavLink to="/foods" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
+                  Foods
+               </NavLink>
+               <NavLink to="/chefs" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
+                  Chefs
+               </NavLink>
+               <NavLink to="#reviews" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
+                  Reviews
+               </NavLink>
             </Nav>
             <Nav className="align-items-center">
-               <Nav.Link href="#home">img</Nav.Link>
-               <Link className="ms-2" href="#blogs">
-                  <Button variant="warning" className="text-white">
-                     Danger
+               <NavLink to="/profile" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
+                  img
+               </NavLink>
+               <Link className="ms-2" to="/login">
+                  <Button variant="warning" className="text-white fw-semibold">
+                     Login
                   </Button>
                </Link>
             </Nav>

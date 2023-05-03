@@ -10,7 +10,6 @@ const Main = () => {
    return (
       <div>
          <NavigationBar></NavigationBar>
-
          <main>
             <Outlet></Outlet>
          </main>
