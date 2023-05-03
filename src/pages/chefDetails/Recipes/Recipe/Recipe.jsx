@@ -51,7 +51,6 @@ const Recipe = ({ foodItem }) => {
                            <FaHeart className="text-danger"></FaHeart>
                         </Button>
                      )}
-                     <ToastContainer></ToastContainer>
                   </Col>
                </Row>
 

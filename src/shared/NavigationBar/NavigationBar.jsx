@@ -1,10 +1,24 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Container, Form, Nav, Navbar } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
+import Dropdown from "react-bootstrap/Dropdown";
+import { toast } from "react-toastify";
 
 const NavigationBar = () => {
+   const { user, logOut } = useContext(AuthContext);
+
+   const handelLogOut = () => {
+      logOut()
+         .then(() => {
+            toast.success("User logged out successfully");
+         })
+         .catch((error) => {
+            console.log(error.message);
+         });
+   };
    return (
       <Navbar bg="danger" variant="dark" sticky="top" className="py-3">
          <Container className="gap-4 mt-3 pb-3 align-items-center">
@@ -41,15 +55,34 @@ const NavigationBar = () => {
                   Reviews
                </NavLink>
             </Nav>
-            <Nav className="align-items-center">
-               <NavLink to="/profile" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
-                  img
-               </NavLink>
-               <Link className="ms-2" to="/login">
-                  <Button variant="warning" className="text-white fw-semibold">
-                     Login
-                  </Button>
-               </Link>
+            <Nav className="align-items-center gap-3">
+               {user ? (
+                  <Dropdown>
+                     <Dropdown.Toggle variant="danger" id="dropdown-basic">
+                        <Link to="/profile">
+                           <img
+                              src={user?.photoURL}
+                              className="rounded-circle border-3 border border-warning me-3"
+                              alt=""
+                              style={{ height: "50px", width: "50px" }}
+                              title={`${user?.displayName}`}
+                           />
+                        </Link>
+                     </Dropdown.Toggle>
+
+                     <Dropdown.Menu className="bg-warning rounded-0">
+                        <Button variant="danger" className="ms-3 rounded-0" onClick={handelLogOut}>
+                           Log Out
+                        </Button>
+                     </Dropdown.Menu>
+                  </Dropdown>
+               ) : (
+                  <Link className="ms-2" to="/login">
+                     <Button variant="warning" className="text-white fw-semibold rounded-0">
+                        Login
+                     </Button>
+                  </Link>
+               )}
             </Nav>
          </Container>
       </Navbar>
