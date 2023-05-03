@@ -3,15 +3,20 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 
+import { toast } from "react-toastify";
+
 const Register = () => {
-   const { user, googleSignIn, gitHubLogin, signUpEmail } = useContext(AuthContext);
+   const { googleSignIn, gitHubLogin, signUpEmail, updateUserProfile } = useContext(AuthContext);
+   const navigate = useNavigate();
    const [clicked, setClicked] = useState(false);
+   const [err, setErr] = useState("");
 
    const handelEmailSignUp = (e) => {
       e.preventDefault();
+      setErr(err);
       const from = e.target;
       const firstName = from.firstName.value;
       const lastName = from.lastName.value;
@@ -19,38 +24,58 @@ const Register = () => {
       const url = from.url.value;
       const email = from.email.value;
       const password = from.password.value;
-      console.log(fullName, url, email, password);
+      if (password.length < 6) {
+         toast.error("Password must be at least 6 characters");
+         setErr("Password must be at least 6 characters");
+         return;
+      }
+
       signUpEmail(email, password)
          .then((result) => {
             const user = result.user;
             console.log(user);
+            updateUserProfile(fullName, url);
+            navigate("/");
+            toast.success("Sign Up Success");
          })
          .catch((error) => {
             const errorMessage = error.message;
-            console.log(errorMessage);
+            setErr(errorMessage);
+            toast.error(errorMessage);
+            console.error(errorMessage);
          });
    };
 
    const handelGoogleSignIn = () => {
+      setErr(err);
       googleSignIn()
          .then((result) => {
             const loggedUser = result.user;
+            navigate("/");
+            toast.success("Sign Up Success");
             console.log(loggedUser);
          })
          .catch((error) => {
             const errorMessage = error.message;
+            setErr(errorMessage);
+            toast.error(errorMessage);
             console.log(errorMessage);
          });
    };
 
    const handelGitHubLogin = () => {
+      setErr(err);
       gitHubLogin()
          .then((result) => {
             const loggedUser = result.user;
+            navigate("/");
+            toast.success("Sign Up Success");
             console.log(loggedUser);
          })
          .catch((error) => {
             const errorMessage = error.message;
+            setErr(errorMessage);
+            toast.error(errorMessage);
             console.log(errorMessage);
          });
    };
@@ -60,25 +85,26 @@ const Register = () => {
          <Form className="px-5 pb-3 w-75 mx-auto" onSubmit={handelEmailSignUp}>
             <Form.Group className="mb-3" controlId="formBasicFirstName">
                <Form.Label>First Name</Form.Label>
-               <Form.Control type="text" placeholder="First Name" name="firstName" />
+               <Form.Control type="text" placeholder="First Name" name="firstName" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicLastName">
                <Form.Label>Last Name</Form.Label>
-               <Form.Control type="text" name="lastName" placeholder="Last Name" />
+               <Form.Control type="text" name="lastName" placeholder="Last Name" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicURL">
                <Form.Label>Photo URL</Form.Label>
-               <Form.Control type="text" name="url" placeholder="Photo URL" />
+               <Form.Control type="text" name="url" placeholder="Photo URL" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                <Form.Label>Email address</Form.Label>
-               <Form.Control name="email" type="email" placeholder="Enter email" />
+               <Form.Control name="email" type="email" placeholder="Enter email" required />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
                <Form.Label>Password</Form.Label>
-               <Form.Control name="password" type="password" placeholder="Password" />
+               <Form.Control name="password" type="password" placeholder="Password" required />
             </Form.Group>
+            <p className="text-danger">{err}</p>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                <Form.Check
                   onClick={() => setClicked(!clicked)}

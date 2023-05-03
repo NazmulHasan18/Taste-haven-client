@@ -65,7 +65,7 @@ const NavigationBar = () => {
                               className="rounded-circle border-3 border border-warning me-3"
                               alt=""
                               style={{ height: "50px", width: "50px" }}
-                              title={`${user?.displayName}`}
+                              title={`${user.displayName || ""}`}
                            />
                         </Link>
                      </Dropdown.Toggle>

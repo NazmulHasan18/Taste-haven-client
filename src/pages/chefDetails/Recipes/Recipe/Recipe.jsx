@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { FaHeart } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Recipe = ({ foodItem }) => {

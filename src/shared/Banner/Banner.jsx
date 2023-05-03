@@ -8,7 +8,7 @@ const Banner = () => {
          <Carousel.Item>
             <img className="d-block w-100 " src="/Panta_Ilish2.jpg" alt="First slide" />
 
-            <Carousel.Caption className="mb-5">
+            <Carousel.Caption className="translate-middle-y">
                <h1 className="fw-bolder" style={{ color: "#ecec4c", fontSize: "80px" }}>
                   Indulge in the Flavors of Bangladesh Cuisine
                </h1>
