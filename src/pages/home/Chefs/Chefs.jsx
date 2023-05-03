@@ -17,7 +17,7 @@ const Chefs = ({ chefs }) => {
       <div className="my-5" id="chefs">
          <h2 className="text-center pt-5">The Hand You Like To EAT (Chefs)</h2>
          <p className="text-center pb-5">
-            Chefs are the heart of a restaurants. Our chefs are our pride. You will miss their recipes.
+            Chefs are the heart of a restaurants. Our chefs are our pride. You will miss their recipes!!!
          </p>
          <Swiper
             slidesPerView={3}
