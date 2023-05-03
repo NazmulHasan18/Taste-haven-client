@@ -1,11 +1,36 @@
 /* eslint-disable react/no-unescaped-entities */
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 
 const Register = () => {
+   const { user, googleSignIn, gitHubLogin } = useContext(AuthContext);
+   const handelGoogleSignIn = () => {
+      googleSignIn()
+         .then((result) => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+         })
+         .catch((error) => {
+            const errorMessage = error.message;
+            console.log(errorMessage);
+         });
+   };
+
+   const handelGitHubLogin = () => {
+      gitHubLogin()
+         .then((result) => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+         })
+         .catch((error) => {
+            const errorMessage = error.message;
+            console.log(errorMessage);
+         });
+   };
    return (
       <Container className="my-5 w-50 mx-auto" style={{ backgroundColor: "#f3eded" }}>
          <h2 className="text-center py-5">Please Register!!!</h2>
@@ -51,11 +76,11 @@ const Register = () => {
             <p>Or</p>
          </div>
          <div className="d-flex flex-column w-75 px-5 mx-auto gap-3 pb-5">
-            <Button variant="outline-primary">
-               <FaGoogle></FaGoogle> Login With Google
+            <Button variant="outline-primary" onClick={handelGoogleSignIn}>
+               <FaGoogle></FaGoogle> Continue With Google
             </Button>
-            <Button variant="outline-secondary">
-               <FaGithub></FaGithub> Login With GitHub
+            <Button variant="outline-secondary" onClick={handelGitHubLogin}>
+               <FaGithub></FaGithub> Continue With GitHub
             </Button>
          </div>
       </Container>

@@ -7,8 +7,30 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 
 const Login = () => {
-   const { user } = useContext(AuthContext);
-   console.log(user);
+   const { user, googleSignIn, gitHubLogin } = useContext(AuthContext);
+   const handelGoogleSignIn = () => {
+      googleSignIn()
+         .then((result) => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+         })
+         .catch((error) => {
+            const errorMessage = error.message;
+            console.log(errorMessage);
+         });
+   };
+   const handelGitHubLogin = () => {
+      gitHubLogin()
+         .then((result) => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+         })
+         .catch((error) => {
+            const errorMessage = error.message;
+            console.log(errorMessage);
+         });
+   };
+
    return (
       <Container className="my-5 w-50 mx-auto" style={{ backgroundColor: "#f3eded" }}>
          <h2 className="text-center py-5">Please Login!!!</h2>
@@ -38,12 +60,12 @@ const Login = () => {
             <p>Or</p>
          </div>
          <div className="d-flex flex-column w-75 px-5 mx-auto gap-3 pb-5">
-            <Button variant="outline-primary">
-               <FaGoogle></FaGoogle> Login With Google
-            </Button>{" "}
-            <Button variant="outline-secondary">
-               <FaGithub></FaGithub> Login With GitHub
-            </Button>{" "}
+            <Button variant="outline-primary" onClick={handelGoogleSignIn}>
+               <FaGoogle></FaGoogle> Continue With Google
+            </Button>
+            <Button variant="outline-secondary" onClick={handelGitHubLogin}>
+               <FaGithub></FaGithub> Continue With GitHub
+            </Button>
          </div>
       </Container>
    );
