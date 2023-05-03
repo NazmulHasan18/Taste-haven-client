@@ -4,14 +4,19 @@ import Chefs from "../Chefs/Chefs";
 import { useLoaderData } from "react-router-dom";
 import Foods from "../Foods/Foods";
 import Reviews from "../Reviews/Reviews";
+import Banner from "../../../shared/Banner/Banner";
+import { Container } from "react-bootstrap";
 
 const Home = () => {
    const chefs = useLoaderData();
    return (
       <div>
-         <Foods></Foods>
-         <Chefs chefs={chefs}></Chefs>
-         <Reviews></Reviews>
+         <Banner></Banner>
+         <Container>
+            <Foods></Foods>
+            <Chefs chefs={chefs}></Chefs>
+            <Reviews></Reviews>
+         </Container>
       </div>
    );
 };

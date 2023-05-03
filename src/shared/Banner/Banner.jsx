@@ -4,7 +4,7 @@ import { Button, Carousel } from "react-bootstrap";
 
 const Banner = () => {
    return (
-      <Carousel controls={false} indicators={false} interval={5000}>
+      <Carousel controls={false} indicators={false} interval={5000} id="home">
          <Carousel.Item>
             <img className="d-block w-100 " src="/Panta_Ilish2.jpg" alt="First slide" />
 

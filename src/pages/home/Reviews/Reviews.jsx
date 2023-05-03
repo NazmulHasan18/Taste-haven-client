@@ -21,7 +21,6 @@ const Reviews = () => {
          </div>
          <Carousel>
             {reviews.map((reviewed) => {
-               console.log(reviewed);
                return (
                   <Carousel.Item key={reviewed.id} className="bg-black">
                      <img className="d-block w-100 opacity-50 " src="review-bg.jpg" alt="Third slide" />
