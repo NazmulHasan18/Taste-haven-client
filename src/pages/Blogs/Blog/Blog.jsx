@@ -4,7 +4,7 @@ import { Accordion } from "react-bootstrap";
 
 const Blog = () => {
    return (
-      <Accordion>
+      <Accordion id="qna" alwaysOpen>
          <Accordion.Item eventKey="0">
             <Accordion.Header>
                1. What is the differences between uncontrolled and controlled components?
