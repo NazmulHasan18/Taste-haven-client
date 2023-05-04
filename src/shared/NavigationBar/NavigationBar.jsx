@@ -58,6 +58,9 @@ const NavigationBar = () => {
                   <NavLink to="/reviews" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
                      Reviews
                   </NavLink>
+                  <NavLink to="/about" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
+                     About Us
+                  </NavLink>
                </Nav>
                <Nav className="align-items-center gap-3">
                   {user ? (
