@@ -6,6 +6,7 @@ import Login from "../../pages/Login/Login";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import Register from "../../pages/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Blogs from "../../pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
    {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
                   <p>profile is coming</p>
                </PrivateRoute>
             ),
+         },
+         {
+            path: "/blogs",
+            element: <Blogs></Blogs>,
          },
       ],
    },

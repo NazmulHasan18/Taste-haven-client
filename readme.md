@@ -16,6 +16,7 @@
 ## Has a chef details Section
 
 **_ Homepage Chef Section Has a chef recipe button it will redirect you to chef details page _**
+
 **Chef Details Page Has**
 
 -  Chef Banner
