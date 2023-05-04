@@ -3,22 +3,35 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Login = () => {
    const { googleSignIn, gitHubLogin, signInEmail } = useContext(AuthContext);
    const [err, setErr] = useState("");
+   const location = useLocation();
+   const from = location.state.pathname;
+
    const navigate = useNavigate();
-   const handelGoogleSignIn = () => {
+
+   const handelEmailSignIn = (e) => {
+      e.preventDefault();
       setErr("");
-      googleSignIn()
+      const form = e.target;
+      const email = form.email.value;
+      const password = form.password.value;
+      if (password.length < 6) {
+         toast.error("Password must be at least 6 characters");
+         setErr("Password must be at least 6 characters");
+         return;
+      }
+      signInEmail(email, password)
          .then((result) => {
-            const loggedUser = result.user;
-            navigate("/");
+            const user = result.user;
             toast.success("Log In Success");
-            console.log(loggedUser);
+            console.log(user);
+            navigate(from || "/");
          })
          .catch((error) => {
             const errorMessage = error.message;
@@ -28,23 +41,14 @@ const Login = () => {
          });
    };
 
-   const handelEmailSignIn = (e) => {
-      e.preventDefault();
+   const handelGoogleSignIn = () => {
       setErr("");
-      const from = e.target;
-      const email = from.email.value;
-      const password = from.password.value;
-      if (password.length < 6) {
-         toast.error("Password must be at least 6 characters");
-         setErr("Password must be at least 6 characters");
-         return;
-      }
-      signInEmail(email, password)
+      googleSignIn()
          .then((result) => {
-            const user = result.user;
-            navigate("/");
+            const loggedUser = result.user;
+            navigate(from || "/");
             toast.success("Log In Success");
-            console.log(user);
+            console.log(loggedUser);
          })
          .catch((error) => {
             const errorMessage = error.message;

@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Recipe = ({ foodItem }) => {
    const [click, setClick] = useState(false);
-   console.log(foodItem);
+
    const { name, description, requiredItems, cookingMethod, image, rating } = foodItem;
    return (
       <Col>

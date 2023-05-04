@@ -5,6 +5,7 @@ import ChefDetails from "../../pages/chefDetails/ChefDetails/ChefDetails";
 import Login from "../../pages/Login/Login";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import Register from "../../pages/Register/Register";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
    {
@@ -19,7 +20,11 @@ const router = createBrowserRouter([
          },
          {
             path: "/details/:id",
-            element: <ChefDetails></ChefDetails>,
+            element: (
+               <PrivateRoute>
+                  <ChefDetails></ChefDetails>
+               </PrivateRoute>
+            ),
             loader: ({ params }) =>
                fetch(`https://taste-haven-server-nazmulhasan18.vercel.app/chefs/${params.id}`),
          },
@@ -33,7 +38,11 @@ const router = createBrowserRouter([
          },
          {
             path: "/profile",
-            element: <p>profile is coming</p>,
+            element: (
+               <PrivateRoute>
+                  <p>profile is coming</p>
+               </PrivateRoute>
+            ),
          },
       ],
    },

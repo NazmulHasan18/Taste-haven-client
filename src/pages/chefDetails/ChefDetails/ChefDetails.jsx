@@ -6,7 +6,7 @@ import Recipes from "../Recipes/Recipes/Recipes";
 
 const ChefDetails = () => {
    const chef = useLoaderData();
-   console.log(chef);
+
    return (
       <div>
          <ChefBanner chef={chef}></ChefBanner>
