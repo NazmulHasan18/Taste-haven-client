@@ -52,3 +52,11 @@
 -  How to validate React props using PropTypes
 -  Tell us the difference between nodejs and express js.
 -  What is a custom hook, and why will you create a custom hook?
+
+## Live Site Link
+
+-  This site was built using [https://taste-haven-auth.web.app](https://taste-haven-auth.web.app).
+
+## Live Server Link
+
+-  Used live server [https://taste-haven-server-nazmulhasan18.vercel.app/](https://taste-haven-server-nazmulhasan18.vercel.app/)
