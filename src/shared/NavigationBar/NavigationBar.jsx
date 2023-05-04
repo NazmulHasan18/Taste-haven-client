@@ -42,22 +42,22 @@ const NavigationBar = () => {
                      </Button>
                   </Form>
                </Nav>
-               <Nav className="flex-grow-1 justify-content-center align-items-center gap-4 my-3">
+               <Nav className="flex-grow-1 justify-content-center align-items-center gap-4 my-3 nav-pills">
                   <NavLink to="/" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
                      Home
                   </NavLink>
                   <NavLink to="/blogs" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
                      Blogs
                   </NavLink>
-                  <NavLink to="/foods" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
+                  <Nav.Link href="#foods" className="inactiveA">
                      Foods
-                  </NavLink>
-                  <NavLink to="/chefs" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
+                  </Nav.Link>
+                  <Nav.Link href="#chefs" className="inactiveA">
                      Chefs
-                  </NavLink>
-                  <NavLink to="/reviews" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
+                  </Nav.Link>
+                  <Nav.Link href="#reviews" className="inactiveA">
                      Reviews
-                  </NavLink>
+                  </Nav.Link>
                   <NavLink to="/about" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
                      About Us
                   </NavLink>

@@ -21,12 +21,13 @@ h6 {
 .nav-link {
    color: white;
 }
-.activeA {
-   background-color: aliceblue;
+.activeA,
+nav .active {
+   background-color: aliceblue !important;
    text-decoration: none;
    padding: 8px 20px;
    font-weight: 500;
-   color: black;
+   color: black !important;
    border-radius: 8px;
 }
 .inactiveA {
