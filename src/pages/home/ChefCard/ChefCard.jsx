@@ -5,6 +5,7 @@ import { Button, Card } from "react-bootstrap";
 import { FaHeart } from "react-icons/fa";
 import { BiBowlHot } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazy-load";
 
 const ChefCard = ({ chef }) => {
    const { id, name, image, experience, foodItems, likes, chefPosition } = chef;
@@ -15,7 +16,9 @@ const ChefCard = ({ chef }) => {
          style={{ width: "18rem", height: "32rem" }}
          bg={`${id % 2 ? "warning" : "danger"}`}
       >
-         <Card.Img variant="top" src={image} style={{ height: "18rem" }} />
+         <LazyLoad height={288}>
+            <Card.Img variant="top" src={image} style={{ height: "18rem" }} />
+         </LazyLoad>
          <Card.Body className={`${id % 2 ? "text-black" : "text-white"}`}>
             <Card.Title>
                <h3>{name}</h3>

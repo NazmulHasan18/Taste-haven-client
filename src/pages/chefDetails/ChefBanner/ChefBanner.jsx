@@ -3,6 +3,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { FaHeart } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 
 const ChefBanner = ({ chef }) => {
    const { likes, bio, name, image, foodItems, chefPosition, experience } = chef;
@@ -28,14 +29,16 @@ const ChefBanner = ({ chef }) => {
                      </p>
                   </div>
                   <div className="d-flex gap-2 align-items-center">
-                     <h6>Experience:</h6>
+                     <h6>Best Recipes:</h6>
                      <p className="fw-semibold fs-6 mb-2">{foodItems.length}</p>
                   </div>
 
                   <p>{bio}</p>
                </Col>
                <Col md={5} className="text-end ">
-                  <img src={image} alt="" className="img-fluid rounded" style={{ maxHeight: "30rem" }} />
+                  <LazyLoad height={480}>
+                     <img src={image} alt="" className="img-fluid rounded" style={{ maxHeight: "30rem" }} />
+                  </LazyLoad>
                </Col>
             </Row>
          </Container>
