@@ -8,6 +8,7 @@ import Register from "../../pages/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Blogs from "../../pages/Blogs/Blogs";
 import AboutUs from "../../pages/AboutUs/AboutUs";
+import Profile from "../../pages/Profile/Profile";
 
 const router = createBrowserRouter([
    {
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
             path: "/profile",
             element: (
                <PrivateRoute>
-                  <p>profile is coming</p>
+                  <Profile></Profile>
                </PrivateRoute>
             ),
          },
