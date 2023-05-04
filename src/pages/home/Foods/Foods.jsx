@@ -27,7 +27,7 @@ const Foods = () => {
          </div>
 
          <Swiper
-            slidesPerView={3}
+            slidesPerView={1}
             navigation={true}
             spaceBetween={30}
             centeredSlides={true}

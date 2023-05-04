@@ -25,11 +25,11 @@ const Reviews = () => {
                   <Carousel.Item key={reviewed.id} className="bg-black">
                      <img className="d-block w-100 opacity-50 " src="review-bg.jpg" alt="Third slide" />
 
-                     <Carousel.Caption className="translate-middle-y pb-0">
+                     <Carousel.Caption className="translate-lg-middle-y pb-0">
                         <img
                            src={reviewed.image}
                            style={{ height: "150px", width: "150px" }}
-                           className="rounded-circle border border-4 border-danger my-4"
+                           className="rounded-circle border border-4 border-danger my-4 review-user"
                            alt=""
                         />
                         <h3 className="my-3">{reviewed.name}</h3>

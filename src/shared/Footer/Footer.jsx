@@ -7,14 +7,14 @@ const Footer = () => {
    return (
       <Container className="text-white">
          <Row className="mt-5">
-            <Col sm={6} md={3}>
+            <Col xs={12} md={3}>
                <h2>Taste Haven</h2>
                <p>
                   Indulge in the Flavors of <span className="fw-bold">Bangladesh</span>
                   <br /> Cuisine.
                </p>
             </Col>
-            <Col sm={6} md={2} className="">
+            <Col xs={6} md={2} className="">
                <h5 className="mb-3">Explore</h5>
                <div>
                   <Link to="#" className="text-decoration-none text-white footer-link">
@@ -38,7 +38,7 @@ const Footer = () => {
                </div>
             </Col>
 
-            <Col sm={6} md={2}>
+            <Col xs={6} md={2}>
                <div>
                   <h5>Follow</h5>
                   <div className="my-3">
@@ -63,7 +63,7 @@ const Footer = () => {
                   </div>
                </div>
             </Col>
-            <Col sm={6} md={2}>
+            <Col xs={6} md={2}>
                <h5 className="mb-3">Explore</h5>
                <div>
                   <Link to="#" className="text-decoration-none text-white footer-link">
@@ -76,7 +76,7 @@ const Footer = () => {
                   </Link>
                </div>
             </Col>
-            <Col sm={6} md={3}>
+            <Col xs={12} md={3}>
                <div>
                   <h5 className="mb-3">Contact</h5>
                   <p>+88 01904-723512</p>

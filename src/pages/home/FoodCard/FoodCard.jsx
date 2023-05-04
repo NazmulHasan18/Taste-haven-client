@@ -10,7 +10,7 @@ const FoodCard = ({ food }) => {
    return (
       <Card
          className="mb-5 border-warning"
-         style={{ width: "25rem", height: "40rem" }}
+         style={{ maxWidth: "25rem", height: "41rem" }}
          bg={`${id % 2 ? "danger" : "warning"}`}
       >
          <Card.Img variant="top" src={image} style={{ height: "19rem" }} />

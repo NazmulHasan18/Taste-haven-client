@@ -20,9 +20,9 @@ const Chefs = ({ chefs }) => {
             Chefs are the heart of a restaurants. Our chefs are our pride. You will miss their recipes!!!
          </p>
          <Swiper
-            slidesPerView={1}
+            slidesPerView={1.15}
             navigation={true}
-            spaceBetween={30}
+            spaceBetween={200}
             centeredSlides={true}
             loop={true}
             pagination={{
@@ -30,7 +30,7 @@ const Chefs = ({ chefs }) => {
             }}
             breakpoints={{
                640: {
-                  slidesPerView: 1,
+                  slidesPerView: 1.2,
                   spaceBetween: 20,
                },
                768: {

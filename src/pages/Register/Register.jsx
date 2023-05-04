@@ -3,7 +3,7 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 
 import { toast } from "react-toastify";
@@ -11,6 +11,9 @@ import { toast } from "react-toastify";
 const Register = () => {
    const { googleSignIn, gitHubLogin, signUpEmail, updateUserProfile } = useContext(AuthContext);
    const navigate = useNavigate();
+   const location = useLocation();
+   const from = location.state?.pathname;
+   console.log(location, from);
    const [clicked, setClicked] = useState(false);
    const [err, setErr] = useState("");
 
@@ -80,9 +83,9 @@ const Register = () => {
          });
    };
    return (
-      <Container className="my-5 w-50 mx-auto" style={{ backgroundColor: "#f3eded" }}>
+      <Container className="my-5 mx-auto" style={{ backgroundColor: "#f3eded", maxWidth: "600px" }}>
          <h2 className="text-center py-5">Please Register!!!</h2>
-         <Form className="px-5 pb-3 w-75 mx-auto" onSubmit={handelEmailSignUp}>
+         <Form className="px-5 pb-3 mx-auto" style={{ maxWidth: "500px" }} onSubmit={handelEmailSignUp}>
             <Form.Group className="mb-3" controlId="formBasicFirstName">
                <Form.Label>First Name</Form.Label>
                <Form.Control type="text" placeholder="First Name" name="firstName" required />
@@ -146,7 +149,7 @@ const Register = () => {
          <div className="text-center">
             <p>Or</p>
          </div>
-         <div className="d-flex flex-column w-75 px-5 mx-auto gap-3 pb-5">
+         <div className="d-flex flex-column w-100 px-5 mx-auto gap-3 pb-5" style={{ maxWidth: "500px" }}>
             <Button variant="outline-primary" onClick={handelGoogleSignIn}>
                <FaGoogle></FaGoogle> Continue With Google
             </Button>
