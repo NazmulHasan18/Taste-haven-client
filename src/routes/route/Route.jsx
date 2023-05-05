@@ -9,6 +9,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Blogs from "../../pages/Blogs/Blogs";
 import AboutUs from "../../pages/AboutUs/AboutUs";
 import Profile from "../../pages/Profile/Profile";
+import Favorite from "../../pages/Favorite/Favorite";
 
 const router = createBrowserRouter([
    {
@@ -46,6 +47,15 @@ const router = createBrowserRouter([
                   <Profile></Profile>
                </PrivateRoute>
             ),
+         },
+         {
+            path: "/favorite",
+            element: (
+               <PrivateRoute>
+                  <Favorite></Favorite>
+               </PrivateRoute>
+            ),
+            loader: () => fetch("https://taste-haven-server-nazmulhasan18.vercel.app/chefs"),
          },
          {
             path: "/blogs",

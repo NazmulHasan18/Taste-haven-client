@@ -66,6 +66,9 @@ const NavigationBar = () => {
                   <NavLink to="/blogs" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
                      Blogs
                   </NavLink>
+                  <NavLink to="/favorite" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
+                     Favorite
+                  </NavLink>
 
                   <NavLink to="/about" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
                      About Us

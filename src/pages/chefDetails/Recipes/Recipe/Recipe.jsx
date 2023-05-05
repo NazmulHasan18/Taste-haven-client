@@ -1,16 +1,28 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { FaHeart } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { addToCart, getFoodCart } from "../../../../utils/fakeDB";
 
 const Recipe = ({ foodItem }) => {
    const [click, setClick] = useState(false);
 
-   const { name, description, requiredItems, cookingMethod, image, rating } = foodItem;
+   const { name, description, requiredItems, cookingMethod, image, rating, id } = foodItem;
+
+   useEffect(() => {
+      const storedFood = getFoodCart();
+      const exist = storedFood.find((food) => food.id === id);
+      if (exist) {
+         setClick(true);
+      }
+      return;
+   }, []);
+
    return (
       <Col>
          <Card>
@@ -45,6 +57,7 @@ const Recipe = ({ foodItem }) => {
                            variant={click ? "warning" : "outline-warning"}
                            onClick={() => {
                               setClick(true);
+                              addToCart(id);
                               toast.success("The recipe is your favorite !");
                            }}
                         >

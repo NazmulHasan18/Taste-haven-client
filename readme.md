@@ -13,7 +13,11 @@
 -  Our Customer Section
 -  And a meaningful Footer
 
-## Has a chef details Section
+## Navbar Home button has a dropdown icon
+
+**_ It has section jump ability _**
+
+## Has a chef details Page
 
 **_ Homepage Chef Section Has a chef recipe button it will redirect you to chef details page _**
 
@@ -52,6 +56,10 @@
 -  How to validate React props using PropTypes
 -  Tell us the difference between nodejs and express js.
 -  What is a custom hook, and why will you create a custom hook?
+
+## Profile Page
+
+**_ If User logged in! By clicking on profile image you can go to profile page here has some information about user _**
 
 ## Live Site Link
 

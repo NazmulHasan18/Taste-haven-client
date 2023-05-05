@@ -35,8 +35,8 @@ const ChefBanner = ({ chef }) => {
 
                   <p>{bio}</p>
                </Col>
-               <Col md={5} className="text-end ">
-                  <LazyLoad height={480}>
+               <Col md={5} className="text-end" offset={100}>
+                  <LazyLoad height={480} width={420} threshold={0.95}>
                      <img src={image} alt="" className="img-fluid rounded" style={{ maxHeight: "30rem" }} />
                   </LazyLoad>
                </Col>
