@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext } from "react";
-import { Button, Container, Form, Nav } from "react-bootstrap";
+import { Button, Container, Form, Nav, NavDropdown } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import { FaSearch } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
@@ -43,21 +43,30 @@ const NavigationBar = () => {
                   </Form>
                </Nav>
                <Nav className="flex-grow-1 justify-content-center align-items-center gap-4 my-3 nav-pills">
-                  <NavLink to="/" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
-                     Home
-                  </NavLink>
+                  <div className="d-flex position-relative align-items-center">
+                     <NavLink
+                        to="/"
+                        className={({ isActive }) => (isActive ? "activeA me-2" : "inactiveA px-4")}
+                     >
+                        Home
+                     </NavLink>
+                     <NavDropdown title="" id="home-dropdown" className="position-absolute end-0" href="#">
+                        <Nav.Link href="#foods" className="activeA">
+                           Foods
+                        </Nav.Link>
+                        <Nav.Link href="#chefs" className="activeA">
+                           Chefs
+                        </Nav.Link>
+                        <Nav.Link href="#reviews" className="activeA">
+                           Reviews
+                        </Nav.Link>
+                     </NavDropdown>
+                  </div>
+
                   <NavLink to="/blogs" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
                      Blogs
                   </NavLink>
-                  <Nav.Link href="#foods" className="inactiveA">
-                     Foods
-                  </Nav.Link>
-                  <Nav.Link href="#chefs" className="inactiveA">
-                     Chefs
-                  </Nav.Link>
-                  <Nav.Link href="#reviews" className="inactiveA">
-                     Reviews
-                  </Nav.Link>
+
                   <NavLink to="/about" className={({ isActive }) => (isActive ? "activeA" : "inactiveA")}>
                      About Us
                   </NavLink>

@@ -35,6 +35,18 @@ nav .active {
    color: white;
    font-weight: 600;
 }
+.show {
+   background-color: aliceblue !important;
+   color: black !important;
+   border-radius: 8px;
+}
+.dropdown .nav-link {
+   color: black !important;
+}
+.dropdown-menu .nav-link {
+   background-color: aliceblue !important;
+}
+
 .activeA:hover {
    color: black;
    opacity: 0.95;
@@ -44,6 +56,12 @@ nav .active {
    color: white;
    opacity: 0.75;
 }
+
+.LazyLoad {
+   opacity: 1;
+   transition: all 3s ease-in-out;
+}
+
 @media screen and (max-width: 600px) {
    .carousel-text {
       display: none;

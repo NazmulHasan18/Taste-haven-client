@@ -14,7 +14,7 @@ const Recipe = ({ foodItem }) => {
    return (
       <Col>
          <Card>
-            <Card.Img variant="top" src={image} style={{ width: "19rem" }} />
+            <Card.Img variant="top" src={image} className="img-fluid" />
             <Card.Body>
                <Card.Title>
                   <p className="fw-semibold fs-4">{name}</p>
