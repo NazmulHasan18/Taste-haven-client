@@ -61,6 +61,12 @@
 
 **_ If User logged in! By clicking on profile image you can go to profile page here has some information about user _**
 
+## FakeDB added with some function about local storage
+
+## Favorite page added
+
+**_ It will show your selected favorite food and how to cook them in details _**
+
 ## Live Site Link
 
 -  This site was built using [https://taste-haven-auth.web.app](https://taste-haven-auth.web.app).

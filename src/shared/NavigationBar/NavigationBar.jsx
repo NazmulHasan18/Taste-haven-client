@@ -21,7 +21,7 @@ const NavigationBar = () => {
          });
    };
    return (
-      <Navbar bg="danger" variant="dark" className="py-3" collapseOnSelect expand="lg">
+      <Navbar bg="danger" variant="dark" className="py-3" collapseOnSelect expand="lg" sticky="top">
          <Container className="gap-4 mt-3 pb-3 align-items-center">
             <h2 className="text-white fs-2">Taste Haven</h2>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -50,7 +50,12 @@ const NavigationBar = () => {
                      >
                         Home
                      </NavLink>
-                     <NavDropdown title="" id="home-dropdown" className="position-absolute end-0" href="#">
+                     <NavDropdown
+                        title=""
+                        id="home-dropdown"
+                        className="position-absolute end-0 home-dropdown"
+                        href="#"
+                     >
                         <Nav.Link href="#foods" className="activeA">
                            Foods
                         </Nav.Link>

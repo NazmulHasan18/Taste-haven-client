@@ -56,7 +56,7 @@ const Favorite = () => {
                ))}
             </Col>
             <Col xs={12} md={3}>
-               <CookMethod cookMethod={cookFood}></CookMethod>
+               {cookFood && <CookMethod cookMethod={cookFood}></CookMethod>}
             </Col>
          </Row>
       </Container>
