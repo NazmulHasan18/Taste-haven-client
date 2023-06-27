@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
 import FoodCard from "../FoodCard/FoodCard";
+import { Container } from "react-bootstrap";
 
 const Foods = () => {
    const [foods, setFoods] = useState([]);
@@ -16,7 +17,7 @@ const Foods = () => {
          .then((data) => setFoods(data));
    }, []);
    return (
-      <div className="my-5" id="foods">
+      <Container className="my-5" id="foods">
          <div className="text-center py-5">
             <h2>Our Food Menu </h2>
             <p>
@@ -56,7 +57,7 @@ const Foods = () => {
                );
             })}
          </Swiper>
-      </div>
+      </Container>
    );
 };
 

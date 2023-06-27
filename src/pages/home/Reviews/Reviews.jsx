@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import ReactStars from "react-rating-stars-component";
 
@@ -11,7 +12,7 @@ const Reviews = () => {
          .then((data) => setReviews(data));
    }, []);
    return (
-      <div id="reviews" className="my-5">
+      <Container id="reviews" className="my-5">
          <div className="text-center py-5">
             <h2>Customer Reviews</h2>
             <p>
@@ -52,7 +53,7 @@ const Reviews = () => {
                );
             })}
          </Carousel>
-      </div>
+      </Container>
    );
 };
 

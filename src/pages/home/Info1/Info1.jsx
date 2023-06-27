@@ -5,7 +5,6 @@ import { Parallax } from "react-parallax";
 const Info1 = () => {
    return (
       <Parallax
-         blur={10}
          strength={200}
          bgImage="https://i.ibb.co/MN4wf65/blur-coffee-cafe-shop-restaurant-with-bokeh-background-xd.jpg"
          className="mt-5"

@@ -5,8 +5,8 @@ import { useLoaderData } from "react-router-dom";
 import Foods from "../Foods/Foods";
 import Reviews from "../Reviews/Reviews";
 import Banner from "../../../shared/Banner/Banner";
-import { Container } from "react-bootstrap";
 import Info1 from "../Info1/Info1";
+import About from "../About/About";
 
 const Home = () => {
    const chefs = useLoaderData();
@@ -14,11 +14,10 @@ const Home = () => {
       <div>
          <Banner></Banner>
          <Info1></Info1>
-         <Container>
-            <Foods></Foods>
-            <Chefs chefs={chefs}></Chefs>
-            <Reviews></Reviews>
-         </Container>
+         <Foods></Foods>
+         <About></About>
+         <Chefs chefs={chefs}></Chefs>
+         <Reviews></Reviews>
       </div>
    );
 };
