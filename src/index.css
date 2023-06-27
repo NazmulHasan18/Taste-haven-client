@@ -111,4 +111,7 @@ nav .active {
       left: 75px;
       top: 0px;
    }
+   .about-img {
+      width: 100% !important;
+   }
 }

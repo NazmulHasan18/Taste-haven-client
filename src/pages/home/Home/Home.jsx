@@ -7,6 +7,7 @@ import Reviews from "../Reviews/Reviews";
 import Banner from "../../../shared/Banner/Banner";
 import Info1 from "../Info1/Info1";
 import About from "../About/About";
+import BookNow from "../BookNow/BookNow";
 
 const Home = () => {
    const chefs = useLoaderData();
@@ -17,6 +18,7 @@ const Home = () => {
          <Foods></Foods>
          <About></About>
          <Chefs chefs={chefs}></Chefs>
+         <BookNow></BookNow>
          <Reviews></Reviews>
       </div>
    );

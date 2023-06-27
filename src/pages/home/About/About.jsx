@@ -1,8 +1,9 @@
+import { Container } from "react-bootstrap";
 import { Parallax } from "react-parallax";
 
 const About = () => {
    return (
-      <div>
+      <div data-aos="fade-up" data-aos-duration="2000">
          <Parallax
             bgImage="https://i.ibb.co/FYLRVLx/fuzzy-restaurant-with-chef-working.jpg"
             bgImageAlt="about us"
@@ -23,16 +24,15 @@ const About = () => {
                   />
                </div>
             )}
-            style={{ height: "100vh" }}
          >
-            <div className="d-flex gap-5 align-items-center text-start">
+            <Container className="d-md-flex  gap-5 align-items-center text-start">
                <img
                   src="https://i.ibb.co/0ZTLPV3/restaurant-kitchen-manager.jpg"
                   alt=""
-                  className="m-5"
+                  className="m-5 about-img"
                   style={{ width: "50%" }}
                />
-               <div className="text-white" style={{ width: "50%" }}>
+               <div className="text-white about-img m-3" style={{ width: "50%" }}>
                   <h2 className="border-bottom border-2 pb-3 mb-3">About Us</h2>
                   <p className="fs-5">
                      Welcome to Taste Haven, where culinary excellence meets exceptional hospitality. Indulge
@@ -43,7 +43,7 @@ const About = () => {
                      more. Discover why Taste Haven is the ultimate destination for food enthusiasts.
                   </p>
                </div>
-            </div>
+            </Container>
          </Parallax>
       </div>
    );

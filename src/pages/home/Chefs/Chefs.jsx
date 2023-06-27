@@ -15,7 +15,7 @@ import { Container } from "react-bootstrap";
 
 const Chefs = ({ chefs }) => {
    return (
-      <Container className="my-5" id="chefs">
+      <Container className="my-5" id="chefs" data-aos="fade-up" data-aos-duration="2000">
          <h2 className="text-center pt-5">The Hand You Like To EAT (Chefs)</h2>
          <p className="text-center pb-5">
             Chefs are the heart of a restaurants. Our chefs are our pride. You will miss their recipes!!!

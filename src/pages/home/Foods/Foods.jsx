@@ -17,7 +17,7 @@ const Foods = () => {
          .then((data) => setFoods(data));
    }, []);
    return (
-      <Container className="my-5" id="foods">
+      <Container className="my-5" id="foods" data-aos="fade-up" data-aos-duration="2000">
          <div className="text-center py-5">
             <h2>Our Food Menu </h2>
             <p>

@@ -12,7 +12,7 @@ const Reviews = () => {
          .then((data) => setReviews(data));
    }, []);
    return (
-      <Container id="reviews" className="my-5">
+      <Container id="reviews" className="my-5" data-aos="fade-up" data-aos-duration="2000">
          <div className="text-center py-5">
             <h2>Customer Reviews</h2>
             <p>
