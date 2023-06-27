@@ -62,6 +62,22 @@ nav .active {
    transition: all 3s ease-in-out;
 }
 
+.info1-food {
+   background-color: rgb(255, 241, 243);
+}
+.info2-food {
+   background-color: rgba(247, 247, 247, 0.815);
+}
+.info3-food {
+   background-color: rgba(255, 248, 151, 0.815);
+}
+.info4-food {
+   background-color: rgba(144, 238, 255, 0.815);
+}
+.info-food:hover {
+   background-color: pink;
+}
+
 @media screen and (max-width: 600px) {
    .carousel-text {
       display: none;

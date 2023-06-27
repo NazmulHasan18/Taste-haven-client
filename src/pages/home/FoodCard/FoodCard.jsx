@@ -6,15 +6,14 @@ import { Button, Card } from "react-bootstrap";
 import { BiBowlHot } from "react-icons/bi";
 
 const FoodCard = ({ food }) => {
-   const { image, name, description, category, price, rating, id } = food;
+   const { image, name, description, category, price, rating } = food;
    return (
       <Card
          className="mb-5 border-warning"
-         style={{ maxWidth: "25rem", height: "41rem" }}
-         bg={`${id % 2 ? "danger" : "warning"}`}
+         style={{ maxWidth: "25rem", height: "41rem", backgroundColor: "#fff5f6" }}
       >
          <Card.Img variant="top" src={image} style={{ height: "19rem" }} />
-         <Card.Body className={`${id % 2 && "text-white"}`}>
+         <Card.Body>
             <Card.Title>
                <h3>{name}</h3>
             </Card.Title>
@@ -34,7 +33,7 @@ const FoodCard = ({ food }) => {
                      count={5}
                      value={rating}
                      size={24}
-                     activeColor={`${id % 2 ? "yellow" : "red"}`}
+                     activeColor="red"
                      isHalf={true}
                      color="blue"
                      edit={false}
@@ -42,10 +41,7 @@ const FoodCard = ({ food }) => {
                   <p className="mb-0">{rating}</p>
                </div>
             </div>
-            <Button
-               variant={`${id % 2 ? "warning" : "danger"}`}
-               className="mt-3  mb-4 position-absolute bottom-0"
-            >
+            <Button variant="danger" className="mt-3  mb-4 position-absolute bottom-0">
                Buy Now <BiBowlHot></BiBowlHot>
             </Button>
          </Card.Body>

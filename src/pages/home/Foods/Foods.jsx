@@ -5,8 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper";
+import { Navigation } from "swiper";
 import FoodCard from "../FoodCard/FoodCard";
 
 const Foods = () => {
@@ -32,9 +31,6 @@ const Foods = () => {
             spaceBetween={30}
             centeredSlides={true}
             loop={true}
-            pagination={{
-               clickable: true,
-            }}
             breakpoints={{
                640: {
                   slidesPerView: 1,
@@ -49,7 +45,7 @@ const Foods = () => {
                   spaceBetween: 50,
                },
             }}
-            modules={[Navigation, Pagination]}
+            modules={[Navigation]}
             className="mySwiper"
          >
             {foods.map((food) => {
